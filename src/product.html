@@ -46,6 +46,40 @@
 
     <a href="index.html">Back to Product Categories</a>
 
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h3>Follow Us!</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore.
+          </p>
+        </div>
+        <div class="footer-address">
+          <h3>Company Name</h3>
+          <p>Address Ave.<br />City Name, Sure ZP</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 VENIA. All rights reserved.</p>
+      </div>
+    </footer>
+
     <script>
       async function fetchProductDetails() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -73,12 +107,24 @@
       }
 
       function displayProductDetails(product) {
+        console.log(product);
         const productDetailElement = document.getElementById("product-detail");
         productDetailElement.innerHTML = `
-                <img src="${product.image}" alt="${product.title}" />
+        <div>
+                <img src="${product.image}" alt="${
+          product.title
+        }"  width:"250px" height="250px/>
                 <h2>${product.title}</h2>
                 <p>Price: $${product.price.toFixed(2)}</p>
+                <p><span>${product.rating.rate} ★ </span><span>${
+          product.rating.count
+        }</p>
                 <p>${product.description}</p>
+                <button>ADD TO CART</button>
+                <p><span>like</span><span>share</span></p>
+                </div>
+                <div><p>${product.title}</p>
+                  <p>${product.description}</p></div>
             `;
       }
 
