@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Listing</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo">VENIA</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Smart Gear</a></li>
-          <li><a href="#">Accessories</a></li>
-        </ul>
-      </nav>
-      <div class="cart">
-        <span>Cart</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">VENIA</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Smart Gear</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </nav>
+
+    <div class="cart">
+      <span>Cart</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">Men's <br /><u>Outer wear</u></div>
+  </section>
+
+  <input type="text" id="search" placeholder="search products..." />
+
+  <div>
+    <div class="filters">
+      <h4>Filters</h4>
+      
+      <div class="category-filters">
+        <h4>Categories</h4>
+        <label>
+          <input type="checkbox" value="electronics" />
+          Electronics
+        </label>
+        <label>
+          <input type="checkbox" value="jewelery" />
+          Jewelery
+        </label>
+        <label>
+          <input type="checkbox" value="men's clothing" />
+          Men's Clothing
+        </label>
+        <label>
+          <input type="checkbox" value="women's clothing" />
+          Women's Clothing
+        </label>
       </div>
-    </header>
 
-    <section class="hero">
-      <div class="hero-text">Men's <br /><u>Outer wear</u></div>
-    </section>
-
-    <input type="text" id="search" placeholder="search products..." />
+      <div class="price-filters">
+        <h4>Price Range</h4>
+        <label> <input type="checkbox" value="0-50" /> $0 - $50 </label>
+        <label>
+          <input type="checkbox" value="51-100" />
+          $51 - $100
+        </label>
+        <label>
+          <input type="checkbox" value="101-200" />
+          $101 - $200
+        </label>
+      </div>
+    </div>
 
     <div class="sort-section">
       <div id="total-products"></div>
@@ -39,83 +81,47 @@
       </select>
     </div>
 
-    <div>
-      <div class="filters">
-        <h4>Filters</h4>
-        <div class="category-filters">
-          <h4>Categories</h4>
-          <label>
-            <input type="checkbox" value="electronics" />
-            Electronics
-          </label>
-          <label>
-            <input type="checkbox" value="jewelery" />
-            Jewelery
-          </label>
-          <label>
-            <input type="checkbox" value="men's clothing" />
-            Men's Clothing
-          </label>
-          <label>
-            <input type="checkbox" value="women's clothing" />
-            Women's Clothing
-          </label>
-        </div>
+    <div id="loading" style="display: none">Loading ...</div>
 
-        <div class="price-filters">
-          <h4>Price Range</h4>
-          <label> <input type="checkbox" value="0-50" /> $0 - $50 </label>
-          <label>
-            <input type="checkbox" value="51-100" />
-            $51 - $100
-          </label>
-          <label>
-            <input type="checkbox" value="101-200" />
-            $101 - $200
-          </label>
-        </div>
+    <main id="products-list"></main>
+    <button id="load-more">Load More</button>
+    <div id="loading" class="loading">Loading...</div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
       </div>
-
-      <div id="loading" style="display: none">Loading ...</div>
-
-      <main id="products-list"></main>
-      <button id="load-more">Load More</button>
-      <div id="loading" class="loading">Loading...</div>
+      <div class="footer-links">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <h3>Follow Us!</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+        </p>
+      </div>
+      <div class="footer-address">
+        <h3>Company Name</h3>
+        <p>Address Ave.<br />City Name, Sure ZP</p>
+      </div>
     </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 VENIA. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="./index.js"></script>
+</body>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-links">
-          <h3>About Us</h3>
-          <ul>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3>Help</h3>
-          <ul>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Order Status</a></li>
-            <li><a href="#">Returns</a></li>
-          </ul>
-        </div>
-        <div class="footer-info">
-          <h3>Follow Us!</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore.
-          </p>
-        </div>
-        <div class="footer-address">
-          <h3>Company Name</h3>
-          <p>Address Ave.<br />City Name, Sure ZP</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 VENIA. All rights reserved.</p>
-      </div>
-    </footer>
-    <script type="module" src="./index.js"></script>
-  </body>
 </html>
