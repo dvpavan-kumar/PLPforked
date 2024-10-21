@@ -102,7 +102,7 @@ nav {
   margin-bottom: 10px;
 }
 
-filters .category-filters,
+.filters .category-filters,
 .price-filters {
   display: flex;
   flex-direction: column;

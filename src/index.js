@@ -32,6 +32,7 @@ function createProductHTML(product) {
         <img src="${product.image}" alt="${product.title}" />
         <h3>${product.title}</h3>
         <p>$${product.price.toFixed(2)}</p>
+        <p>	&#10084;</p>
     </div>
   `;
 }
