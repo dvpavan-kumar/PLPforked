@@ -111,6 +111,7 @@
         const productDetailElement = document.getElementById("product-detail");
         productDetailElement.innerHTML = `
         <div>
+          <div>
                 <img src="${product.image}" alt="${
           product.title
         }"  width:"250px" height="250px/>
@@ -124,7 +125,9 @@
                 <p><span>like</span><span>share</span></p>
                 </div>
                 <div><p>${product.title}</p>
-                  <p>${product.description}</p></div>
+                  <p>${product.description}</p>
+                </div>
+        </div>
             `;
       }
 
