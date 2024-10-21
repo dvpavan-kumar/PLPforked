@@ -26,7 +26,7 @@ async function fetchProducts() {
 
 function createProductHTML(product) {
   return `
-    <div class="product" onclick="location.href='product-details.html?id=${
+    <div class="product" onclick="location.href='product.html?id=${
       product.id
     }'">
         <img src="${product.image}" alt="${product.title}" />
