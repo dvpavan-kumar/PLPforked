@@ -102,20 +102,27 @@ nav {
   margin-bottom: 10px;
 }
 
+filters .category-filters,
+.price-filters {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
 #load-more {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   display: block;
   margin: 20px auto;
-  background-color: #007bff;
+  background-color: #4682b5;
   color: #fff;
   border: none;
   border-radius: 5px;
 }
 
 #load-more:hover {
-  background-color: #0056b3;
+  background-color: #4682b5;
 }
 
 .loading {
