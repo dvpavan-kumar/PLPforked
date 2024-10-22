@@ -12,7 +12,7 @@
         background-color: #f9f9f9;
       }
       .product-detail {
-        margin: 50px;
+        margin: 50px auto;
         max-width: 600px;
         background: white;
         padding: 20px;
@@ -20,8 +20,7 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
       .product-detail img {
-        max-width: 50%;
-        height: auto;
+        max-width: 60%;
       }
       .pdp-conatiner {
         display: flex;
@@ -115,9 +114,7 @@
         productDetailElement.innerHTML = `
         <div class="pdp-conatiner">
           <div>
-          <img src="${product.image}" alt="${
-          product.title
-        }"  width:"250" height="250px"/>
+          <img src="${product.image}" alt="${product.title}" />
         </div>
           <div>
                 <h4>${product.title}</h4><br/>

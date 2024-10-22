@@ -4,8 +4,18 @@ let displayedProductsCount = 0;
 const sortSelect = document.getElementById("sort");
 const productsList = document.getElementById("products-list");
 const loadMoreButton = document.getElementById("load-more");
+const loadingIndicator = document.getElementById("loading");
+
+const showLoading = () => {
+  loadingIndicator.style.display = "block";
+};
+
+const hideLoading = () => {
+  loadingIndicator.style.display = "none";
+};
 
 const fetchProducts = async () => {
+  showLoading();
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     if (!response.ok) throw new Error("Failed to fetch products.");
@@ -16,6 +26,8 @@ const fetchProducts = async () => {
   } catch (error) {
     console.error(error);
     document.getElementById("loading").innerText = "Failed to load products.";
+  } finally {
+    hideLoading();
   }
 };
 
