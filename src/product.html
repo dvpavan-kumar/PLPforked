@@ -43,7 +43,7 @@
         <span>Cart</span>
       </div>
     </header>
-
+    <div id="product-loading">Product Loading...</div>
     <div id="product-detail" class="product-detail"></div>
 
     <a href="index.html">Back to Product Categories</a>
@@ -83,6 +83,15 @@
     </footer>
 
     <script>
+      const loader = document.getElementById("product-loading");
+      const showLoader = () => {
+        loader.style.display = "block";
+      };
+
+      const hideLoader = () => {
+        loader.style.display = "none";
+      };
+
       async function fetchProductDetails() {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get("id");
@@ -92,7 +101,7 @@
             "Product not found.";
           return;
         }
-
+        showLoader();
         try {
           const response = await fetch(
             `https://fakestoreapi.com/products/${productId}`
@@ -105,6 +114,8 @@
           console.error(error);
           document.getElementById("product-detail").innerText =
             "Failed to load product details.";
+        } finally {
+          hideLoader();
         }
       }
 
