@@ -31,7 +31,6 @@ body {
 
 .container {
   display: flex !important;
-  padding: 0 50px;
 }
 .container .filters {
   width: 40%;
@@ -114,7 +113,7 @@ nav {
 .product img {
   max-width: 100%;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -201,6 +200,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .container {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  .container .filters {
+    width: 100%;
+  }
+
   .product p {
     padding: 0;
     text-align: left;

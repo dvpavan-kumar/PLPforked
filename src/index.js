@@ -13,7 +13,6 @@ const fetchProducts = async () => {
     filteredProducts = products;
     displayProducts(filteredProducts.slice(0, 10));
     displayedProductsCount = 10;
-    document.getElementById("loading").style.display = "none";
   } catch (error) {
     console.error(error);
     document.getElementById("loading").innerText = "Failed to load products.";
